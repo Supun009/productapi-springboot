@@ -28,7 +28,7 @@ A simple Spring Boot REST API for managing products, using H2 database and OpenA
 
 1. Clone the repository:
    ```sh
-   git clone <your-repo-url>
+   git clone https://github.com/Supun009/productapi-springboot.git
    cd productapi
    ```
 2. Build and run the application:
