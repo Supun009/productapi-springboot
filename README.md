@@ -68,6 +68,5 @@ A simple Spring Boot REST API for managing products, using H2 database and OpenA
 - All API requests and CORS violations are logged.
 - Logs are saved in the `logs/` directory.
 
-## License
-MIT
+
 
