@@ -31,7 +31,7 @@ jobs:
       - name: Deploy to Cloud Run
         uses: google-github-actions/deploy-cloudrun@v1
         with:
-          service: product-api
+          service: github-actions-deployer
           image: asia-south1-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/product-api-githubaction/product-api:$GITHUB_SHA
           region: ${{ secrets.GCP_REGION }}
           allow-unauthenticated: true
