@@ -34,4 +34,4 @@ jobs:
           service: github-actions-deployer
           image: asia-south1-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/product-api-githubaction/product-api:$GITHUB_SHA
           region: ${{ secrets.GCP_REGION }}
-          allow-unauthenticated: true
+          flags: '--allow-unauthenticated'
