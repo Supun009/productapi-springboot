@@ -22,16 +22,16 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t asia-south1-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/product-api-githubaction/product-api:$GITHUB_SHA .
+          docker build -t asia-south1-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/product-api-githubaction/product-api:${{ github.sha }} .
 
       - name: Push Docker image
         run: |
-          docker push asia-south1-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/product-api-githubaction/product-api:$GITHUB_SHA
+          docker push asia-south1-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/product-api-githubaction/product-api:${{ github.sha }}
 
       - name: Deploy to Cloud Run
         uses: google-github-actions/deploy-cloudrun@v1
         with:
           service: github-actions-deployer
-          image: asia-south1-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/product-api-githubaction/product-api:$GITHUB_SHA
+          image: asia-south1-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/product-api-githubaction/product-api:${{ github.sha }}
           region: ${{ secrets.GCP_REGION }}
           flags: '--allow-unauthenticated'
